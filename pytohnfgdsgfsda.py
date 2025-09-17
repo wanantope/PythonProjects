@@ -1,0 +1,1 @@
+kartel = ("AFSDASFD", "FSAAFSD")
