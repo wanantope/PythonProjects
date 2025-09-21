@@ -1,7 +1,6 @@
 from random import randint
 import time
 
-
 player = {
     "health": 100,
     "armor": 10,
@@ -9,7 +8,6 @@ player = {
     "gold": 0,
     "size_inventory": 5,
 }
-
 
 enemy = {
     "health": 100,
@@ -45,25 +43,25 @@ def get_gold():
         print(
             f"Игрок получил: {random_gold} золота. Сейчас у него {player['gold']} золота.\n"
         )
-        
-        
+
+
 def heal(*, person_dict: dict):
     while person_dict["health"] < 20:
         person_dict["health"] += 5
         time.sleep(0.5)
-        print(f"Игрок востановил 1 хп. Сейчас у него {person_dict['health']} хп.")
+        print(f"Игрок восстановил 1 хп. Сейчас у него {person_dict['health']} хп.")
     print(f"Игрок восстановился. Сейчас у него {person_dict['health']} хп.\n")
-    
-    
+
+
 def repair_armor(*, person_dict: dict):
     while person_dict["armor"] < 10:
         person_dict["armor"] += 1
         time.sleep(0.5)
-        print(f"Игрок востановил 1 броню. Сейчас у него {person_dict['armor']} единиц брони.")
+        print(f"Игрок восстановил 1 броню. Сейчас у него {person_dict['armor']} едbниц брони.")
     print(f"Игрок восстановился. Сейчас у него {person_dict['armor']} единиц брони.\n")
-    
-    
-def get_damage(*, person_dict: dict, dict_enemy: dict):  #с каждмы уменшением бронии будет наносится больше урона
+
+
+def get_damage(*, person_dict: dict, dict_enemy: dict):  # с каждым уменьшением брони будет наноситься больше урона
     while person_dict['health'] > 0:
         pass
 
