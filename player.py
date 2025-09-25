@@ -2,17 +2,17 @@ from random import randint
 import time
 
 player = {
-    "health": 100,
-    "armor": 10,
-    "damage": 5,
+    "health": 0,
+    "armor": 100,
+    "damage": 10,
     "gold": 0,
     "size_inventory": 5,
 }
 
 enemy = {
     "health": 100,
-    "armor": 10,
-    "damage": 2,
+    "armor": 100,
+    "damage": 10,
     "gold": 0,
     "size_inventory": 5,
 }
@@ -46,7 +46,7 @@ def get_gold():
 
 
 def heal(*, person_dict: dict):
-    while person_dict["health"] < 20:
+    while person_dict["health"] < 100:
         person_dict["health"] += 5
         time.sleep(0.5)
         print(f"Игрок восстановил 1 хп. Сейчас у него {person_dict['health']} хп.")
@@ -54,17 +54,49 @@ def heal(*, person_dict: dict):
 
 
 def repair_armor(*, person_dict: dict):
-    while person_dict["armor"] < 10:
-        person_dict["armor"] += 1
+    while person_dict["armor"] < 100:
+        person_dict["armor"] += 10
         time.sleep(0.5)
         print(f"Игрок восстановил 1 броню. Сейчас у него {person_dict['armor']} едbниц брони.")
     print(f"Игрок восстановился. Сейчас у него {person_dict['armor']} единиц брони.\n")
 
 
-def get_damage(*, person_dict: dict, dict_enemy: dict):  # с каждым уменьшением брони будет наноситься больше урона
-    while person_dict['health'] > 0:
-        pass
+def get_damage(*, person_dict: dict, enemy_dict: dict):  # с каждым уменьшением брони будет наноситься больше урона
+    total_damage = 0
+    # if person_dict['health'] == 0:
+    #     return 'Игрок уже мертв. Он не может получить урон'
+    #
+    # elif person_dict['health'] < enemy_dict['damage']:
+    #     person_dict['health'] = 0
+    #     return person_dict
+    #
+    #     total_damage = enemy_dict['damage'] * (1 - (person_dict['armor'] / 100))
+    # elif person_dict['health'] == 0:
+    #     return 'Игрок уже мертв. Он не может получить урон'
+    # elif total_damage <= 0:
+    #     total_damage = 1
+    #     person_dict['armor'] -= 10
+    #     person_dict['health'] -= total_damage
+
+    # итоговый урон = базовый урон врага × (1 – (броня получающего урон / 100))
+    pass
 
 
-heal(person_dict=player)
-repair_armor(person_dict=player)
+get_damage(person_dict=player, enemy_dict=enemy)
+print(player["health"])
+get_damage(person_dict=player, enemy_dict=enemy)
+print(player["health"])
+get_damage(person_dict=player, enemy_dict=enemy)
+print(player["health"])
+get_damage(person_dict=player, enemy_dict=enemy)
+print(player["health"])
+get_damage(person_dict=player, enemy_dict=enemy)
+print(player["health"])
+get_damage(person_dict=player, enemy_dict=enemy)
+print(player["health"])
+get_damage(person_dict=player, enemy_dict=enemy)
+print(player["health"])
+get_damage(person_dict=player, enemy_dict=enemy)
+print(player["health"])
+get_damage(person_dict=player, enemy_dict=enemy)
+print(player["health"])
