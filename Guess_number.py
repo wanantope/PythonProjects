@@ -1,6 +1,6 @@
 import random
 
-r_number = random.randint(1, 11)
+r_number = random.randint(1, 10)
 attempts = 1
 while True:
     try:
