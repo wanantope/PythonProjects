@@ -1,6 +1,6 @@
 account = {
-    "name": "Name",
-    "surname": "Surname",
+    "name": "name",
+    "surname": "surname",
 }
 
 
